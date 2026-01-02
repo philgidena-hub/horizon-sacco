@@ -60,10 +60,10 @@ const FinancialCalculator = ({ lang, translations }) => {
 
         {/* Toggle Switch */}
         <div className="flex justify-center mb-10">
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-1.5 inline-flex">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-1.5 inline-flex flex-col sm:flex-row w-full sm:w-auto">
             <button
               onClick={() => setMode('loan')}
-              className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+              className={`flex items-center justify-center space-x-2 px-4 sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base ${
                 mode === 'loan'
                   ? 'bg-green-600 text-white shadow-lg shadow-green-600/30'
                   : 'text-gray-400 hover:text-white'
@@ -74,7 +74,7 @@ const FinancialCalculator = ({ lang, translations }) => {
             </button>
             <button
               onClick={() => setMode('membership')}
-              className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+              className={`flex items-center justify-center space-x-2 px-4 sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base ${
                 mode === 'membership'
                   ? 'bg-green-600 text-white shadow-lg shadow-green-600/30'
                   : 'text-gray-400 hover:text-white'
