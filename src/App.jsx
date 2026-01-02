@@ -17,6 +17,7 @@ import {
   MapPin,
   Calculator,
   ChevronDown,
+  ChevronRight,
   Menu,
   X,
   Target,
@@ -166,6 +167,9 @@ const translations = {
     contactErrorTitle: 'Error',
     contactErrorMessage: 'Something went wrong. Please try again.',
     contactNote: 'We typically respond within 24 hours during business days.',
+    contactPhoneLabel: 'Phone',
+    contactEmailLabel: 'Email',
+    contactLocationLabel: 'Office',
 
     // UI Labels
     languageLabel: 'Language',
@@ -177,6 +181,20 @@ const translations = {
     statInterestRate: 'Interest Rate',
     statMaxLoan: 'Max Loan',
     statMembers: 'Members',
+
+    // Hero Features
+    heroFeature1Title: 'Secure & Trusted',
+    heroFeature1Desc: 'Licensed Financial Institution',
+    heroFeature2Title: 'Community Driven',
+    heroFeature2Desc: 'Member-owned cooperative',
+    heroFeature3Title: 'Competitive Rates',
+    heroFeature3Desc: 'Up to 10% on savings',
+    heroTrustedBadge: 'Trusted by 5,000+ members',
+
+    // About Section extras
+    aboutBadge: 'About Us',
+    licensedRegulated: 'Licensed & Regulated',
+    memberOwned: 'Member-Owned',
 
     // Calculator Errors & Placeholders
     shareCalcPlaceholder: 'Enter number of shares',
@@ -192,14 +210,14 @@ const translations = {
     footerTagline: 'Building prosperity together',
     footerContact: 'Contact Us',
     footerBankInfo: 'Bank Details',
-    footerBankName: 'Bank of Abyssinia',
+    footerBankName: 'Awash Bank',
     footerAccountNumber: 'Account Number',
     footerQuickLinks: 'Quick Links',
     footerAddress: 'Address',
     footerAddressLine1: 'Hawelti Sub-city',
     footerAddressLine2: 'Mekelle, Tigray',
     footerAddressLine3: 'Ethiopia',
-    footerRights: '© 2024 Horizon SACCO. All rights reserved.',
+    footerRights: '© 2026 Horizon SACCO. All rights reserved.',
   },
 
   am: {
@@ -335,6 +353,9 @@ const translations = {
     contactErrorTitle: 'ስህተት',
     contactErrorMessage: 'የሆነ ስህተት ተፈጥሯል። እባክዎ እንደገና ይሞክሩ።',
     contactNote: 'በስራ ቀናት ውስጥ በ24 ሰዓታት ውስጥ እንመልሳለን።',
+    contactPhoneLabel: 'ስልክ',
+    contactEmailLabel: 'ኢሜይል',
+    contactLocationLabel: 'ቢሮ',
 
     // UI Labels
     languageLabel: 'ቋንቋ',
@@ -346,6 +367,20 @@ const translations = {
     statInterestRate: 'የወለድ መጠን',
     statMaxLoan: 'ከፍተኛ ብድር',
     statMembers: 'አባላት',
+
+    // Hero Features
+    heroFeature1Title: 'ደህንነቱ የተጠበቀ እና የታመነ',
+    heroFeature1Desc: 'ፈቃድ ያለው የፋይናንስ ተቋም',
+    heroFeature2Title: 'በማህበረሰብ የሚመራ',
+    heroFeature2Desc: 'በአባላት የሚተዳደር ማህበር',
+    heroFeature3Title: 'ተወዳዳሪ ተመኖች',
+    heroFeature3Desc: 'በቁጠባ ላይ እስከ 10%',
+    heroTrustedBadge: 'በ5,000+ አባላት የታመነ',
+
+    // About Section extras
+    aboutBadge: 'ስለ እኛ',
+    licensedRegulated: 'ፈቃድ ያለው እና ቁጥጥር የሚደረግበት',
+    memberOwned: 'በአባላት ባለቤትነት',
 
     // Calculator Errors & Placeholders
     shareCalcPlaceholder: 'የድርሻዎች ብዛት ያስገቡ',
@@ -361,14 +396,14 @@ const translations = {
     footerTagline: 'ብልጽግናን በአንድነት እየገነቡ',
     footerContact: 'ያግኙን',
     footerBankInfo: 'የባንክ ዝርዝሮች',
-    footerBankName: 'የአቢሲኒያ ባንክ',
+    footerBankName: 'አዋሽ ባንክ',
     footerAccountNumber: 'የሂሳብ ቁጥር',
     footerQuickLinks: 'ፈጣን አገናኞች',
     footerAddress: 'አድራሻ',
     footerAddressLine1: 'ሃውልቲ ክፍለ ከተማ',
     footerAddressLine2: 'መቀሌ፣ ትግራይ',
     footerAddressLine3: 'ኢትዮጵያ',
-    footerRights: '© 2024 ሆራይዘን ሳኮ። ሁሉም መብቶች የተጠበቁ ናቸው።',
+    footerRights: '© 2026 ሆራይዘን ሳኮ። ሁሉም መብቶች የተጠበቁ ናቸው።',
   },
 
   ti: {
@@ -504,6 +539,9 @@ const translations = {
     contactErrorTitle: 'ጌጋ',
     contactErrorMessage: 'ገለ ጌጋ ተፈጢሩ። በጃኹም ከም ብሓድሽ ፈትኑ።',
     contactNote: 'ኣብ ናይ ስራሕ መዓልታት ኣብ ውሽጢ 24 ሰዓታት ንምልስ።',
+    contactPhoneLabel: 'ተሌፎን',
+    contactEmailLabel: 'ኢመይል',
+    contactLocationLabel: 'ቤት ጽሕፈት',
 
     // UI Labels
     languageLabel: 'ቋንቋ',
@@ -515,6 +553,20 @@ const translations = {
     statInterestRate: 'መጠን ወለድ',
     statMaxLoan: 'ዝለዓለ ልቓሕ',
     statMembers: 'ኣባላት',
+
+    // Hero Features
+    heroFeature1Title: 'ውሑስን እሙንን',
+    heroFeature1Desc: 'ፍቓድ ዘለዎ ፋይናንሳዊ ትካል',
+    heroFeature2Title: 'ብማሕበረሰብ ዝምራሕ',
+    heroFeature2Desc: 'ብኣባላት ዝውነን ማሕበር',
+    heroFeature3Title: 'ተወዳዳሪ መጠናት',
+    heroFeature3Desc: 'ኣብ ዕቁር ክሳዕ 10%',
+    heroTrustedBadge: 'ብ5,000+ ኣባላት እሙን',
+
+    // About Section extras
+    aboutBadge: 'ብዛዕባና',
+    licensedRegulated: 'ፍቓድ ዘለዎን ቁፅፅር ዝግበረሉን',
+    memberOwned: 'ብኣባላት ዝውነን',
 
     // Calculator Errors & Placeholders
     shareCalcPlaceholder: 'ቁፅሪ ድርሻታት ኣእትው',
@@ -530,14 +582,14 @@ const translations = {
     footerTagline: 'ብሓባር ራህዋ ንሃንፅ',
     footerContact: 'ርኸቡና',
     footerBankInfo: 'ዝርዝር ባንኪ',
-    footerBankName: 'ባንኪ ኣቢሲንያ',
+    footerBankName: 'ኣዋሽ ባንኪ',
     footerAccountNumber: 'ቁፅሪ ሕሳብ',
     footerQuickLinks: 'ቅልጡፍ መላግቦታት',
     footerAddress: 'ኣድራሻ',
     footerAddressLine1: 'ሃውልቲ ክፍለ-ከተማ',
     footerAddressLine2: 'መቐለ፣ ትግራይ',
     footerAddressLine3: 'ኢትዮጵያ',
-    footerRights: '© 2024 ሆራይዘን ዕቁርን ልቓሕን። ብሩህ መሰላት ተሓሊዩ።',
+    footerRights: '© 2026 ሆራይዘን ዕቁርን ልቓሕን። ብሩህ መሰላት ተሓሊዩ።',
   }
 };
 
@@ -781,39 +833,49 @@ const Hero = () => {
   const { t, scrollToSection } = useLanguage();
 
   return (
-    <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-primary-600 via-primary-500 to-accent-500 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-600/90 via-primary-500/80 to-accent-500/90"></div>
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-400/20 rounded-full blur-3xl"></div>
+    <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322c55e' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}></div>
       </div>
 
+      {/* Decorative gradient orbs */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary-100 rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary-50 rounded-full blur-3xl opacity-40 translate-y-1/2 -translate-x-1/2"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg">
+          <div className="space-y-6 md:space-y-8">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 px-4 py-2 rounded-full text-sm font-medium">
+              <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
+              {t('heroTrustedBadge')}
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               {t('heroTitle')}
             </h1>
-            <p className="text-xl text-white/90">
+            <p className="text-lg sm:text-xl text-primary-600 font-medium">
               {t('heroSubtitle')}
             </p>
-            <p className="text-lg text-white/80">
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
               {t('heroDescription')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <button
                 onClick={() => scrollToSection('membership')}
-                className="bg-white text-primary-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition transform hover:scale-105 flex items-center justify-center space-x-2 font-semibold shadow-lg"
+                className="bg-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-primary-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-200 flex items-center justify-center space-x-2 font-semibold"
               >
                 <PiggyBank className="w-5 h-5" />
                 <span>{t('heroCtaSave')}</span>
               </button>
               <button
                 onClick={() => scrollToSection('calculator')}
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition flex items-center justify-center space-x-2 font-semibold"
+                className="border-2 border-gray-200 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:border-primary-300 hover:bg-primary-50 transition-all duration-300 flex items-center justify-center space-x-2 font-semibold"
               >
                 <TrendingUp className="w-5 h-5" />
                 <span>{t('heroCtaLoan')}</span>
@@ -821,55 +883,78 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-8">
-              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                <p className="text-2xl sm:text-3xl font-bold text-white">10%</p>
-                <p className="text-xs sm:text-sm text-white/80">{t('statInterestRate') || 'Interest Rate'}</p>
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 sm:pt-8">
+              <div className="text-center">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">10%</p>
+                <p className="text-xs sm:text-sm text-gray-500 mt-1">{t('statInterestRate') || 'Interest Rate'}</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                <p className="text-2xl sm:text-3xl font-bold text-white">10M</p>
-                <p className="text-xs sm:text-sm text-white/80">{t('statMaxLoan') || 'Max Loan'}</p>
+              <div className="text-center border-x border-gray-200">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">10M</p>
+                <p className="text-xs sm:text-sm text-gray-500 mt-1">{t('statMaxLoan') || 'Max Loan'}</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                <p className="text-2xl sm:text-3xl font-bold text-white">5000+</p>
-                <p className="text-xs sm:text-sm text-white/80">{t('statMembers') || 'Members'}</p>
+              <div className="text-center">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">5000+</p>
+                <p className="text-xs sm:text-sm text-gray-500 mt-1">{t('statMembers') || 'Members'}</p>
               </div>
             </div>
           </div>
 
-          {/* Right Image/Illustration */}
-          <div className="relative">
-            <div className="bg-gradient-to-br from-primary-400 to-accent-400 rounded-3xl p-8 shadow-2xl">
-              <div className="bg-white rounded-2xl p-8 space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="bg-primary-100 p-3 rounded-full">
-                    <Shield className="w-8 h-8 text-primary-600" />
+          {/* Right Card */}
+          <div className="relative hidden lg:block">
+            {/* Main card */}
+            <div className="bg-white rounded-3xl shadow-2xl shadow-gray-200/50 border border-gray-100 p-8 relative z-10">
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-primary-50 to-transparent rounded-2xl">
+                  <div className="bg-primary-600 p-3 rounded-xl">
+                    <Shield className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-800">Secure & Trusted</p>
-                    <p className="text-sm text-gray-500">Licensed Financial Institution</p>
+                    <p className="font-semibold text-gray-900">{t('heroFeature1Title')}</p>
+                    <p className="text-sm text-gray-500">{t('heroFeature1Desc')}</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="bg-accent-100 p-3 rounded-full">
-                    <Users className="w-8 h-8 text-accent-600" />
+                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-accent-50 to-transparent rounded-2xl">
+                  <div className="bg-accent-500 p-3 rounded-xl">
+                    <Users className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-800">Community Driven</p>
-                    <p className="text-sm text-gray-500">Member-owned cooperative</p>
+                    <p className="font-semibold text-gray-900">{t('heroFeature2Title')}</p>
+                    <p className="text-sm text-gray-500">{t('heroFeature2Desc')}</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="bg-primary-100 p-3 rounded-full">
-                    <TrendingUp className="w-8 h-8 text-primary-600" />
+                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-primary-50 to-transparent rounded-2xl">
+                  <div className="bg-primary-600 p-3 rounded-xl">
+                    <TrendingUp className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-800">Competitive Rates</p>
-                    <p className="text-sm text-gray-500">Up to 10% on savings</p>
+                    <p className="font-semibold text-gray-900">{t('heroFeature3Title')}</p>
+                    <p className="text-sm text-gray-500">{t('heroFeature3Desc')}</p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Floating decorative elements */}
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary-100 rounded-2xl -z-10 rotate-12"></div>
+            <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-accent-100 rounded-2xl -z-10 -rotate-12"></div>
+          </div>
+
+          {/* Mobile card view */}
+          <div className="lg:hidden bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex items-center space-x-3 p-3 bg-primary-50 rounded-xl">
+                <Shield className="w-6 h-6 text-primary-600" />
+                <span className="text-sm font-medium text-gray-700">{t('heroFeature1Title')}</span>
+              </div>
+              <div className="flex items-center space-x-3 p-3 bg-accent-50 rounded-xl">
+                <Users className="w-6 h-6 text-accent-600" />
+                <span className="text-sm font-medium text-gray-700">{t('heroFeature2Title')}</span>
+              </div>
+              <div className="flex items-center space-x-3 p-3 bg-primary-50 rounded-xl">
+                <TrendingUp className="w-6 h-6 text-primary-600" />
+                <span className="text-sm font-medium text-gray-700">{t('heroFeature3Title')}</span>
               </div>
             </div>
           </div>
@@ -884,49 +969,109 @@ const About = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-12 sm:py-16 md:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary-50/50 to-transparent"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t('aboutTitle')}</h2>
-          <p className="text-lg sm:text-xl text-gray-600">{t('aboutSubtitle')}</p>
+          <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
+            {t('aboutBadge')}
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">{t('aboutTitle')}</h2>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">{t('aboutSubtitle')}</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          {/* Left - Image Card */}
+          <div className="relative order-2 lg:order-1">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
+              {/* Image placeholder - replace src with your generated image */}
+              <div className="aspect-[4/3] bg-gradient-to-br from-primary-600 via-primary-500 to-accent-500 relative">
+                {/* Placeholder content - will be replaced by actual image */}
+                <img
+                  src="/about-image.jpg"
+                  alt="Horizon SACCO Office"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback placeholder */}
+                <div className="absolute inset-0 flex items-center justify-center" style={{ display: 'none' }}>
+                  <div className="text-center text-white p-8">
+                    <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <Building2 className="w-12 h-12 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2">Horizon SACCO</h3>
+                    <p className="text-white/80">Your trusted financial partner</p>
+                  </div>
+                </div>
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              </div>
+
+              {/* Stats overlay */}
+              <div className="absolute bottom-4 left-4 right-4 flex gap-3">
+                <div className="flex-1 bg-white/95 backdrop-blur-sm rounded-xl p-3 text-center shadow-lg">
+                  <p className="text-2xl font-bold text-primary-600">5000+</p>
+                  <p className="text-xs text-gray-600">Members</p>
+                </div>
+                <div className="flex-1 bg-white/95 backdrop-blur-sm rounded-xl p-3 text-center shadow-lg">
+                  <p className="text-2xl font-bold text-primary-600">10M+</p>
+                  <p className="text-xs text-gray-600">Max Loan</p>
+                </div>
+                <div className="flex-1 bg-white/95 backdrop-blur-sm rounded-xl p-3 text-center shadow-lg">
+                  <p className="text-2xl font-bold text-primary-600">10%</p>
+                  <p className="text-xs text-gray-600">Interest</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Decorative elements */}
+            <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent-200 rounded-2xl -z-10 rotate-6"></div>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary-200 rounded-2xl -z-10 -rotate-6"></div>
+          </div>
+
+          {/* Right Content */}
+          <div className="space-y-6 order-1 lg:order-2">
             {/* Vision */}
-            <div className="bg-gradient-to-r from-primary-50 to-white p-8 rounded-2xl border-l-4 border-primary-600 shadow-lg">
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 card-hover">
               <div className="flex items-start space-x-4">
-                <div className="bg-primary-600 p-3 rounded-lg">
+                <div className="bg-gradient-to-br from-primary-500 to-primary-700 p-4 rounded-xl shadow-lg shadow-primary-200">
                   <Eye className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3">{t('visionTitle')}</h3>
+                <div className="flex-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">{t('visionTitle')}</h3>
                   <p className="text-gray-600 leading-relaxed">{t('visionText')}</p>
                 </div>
               </div>
             </div>
 
             {/* Mission */}
-            <div className="bg-gradient-to-r from-accent-50 to-white p-8 rounded-2xl border-l-4 border-accent-600 shadow-lg">
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 card-hover">
               <div className="flex items-start space-x-4">
-                <div className="bg-accent-600 p-3 rounded-lg">
+                <div className="bg-gradient-to-br from-accent-500 to-accent-700 p-4 rounded-xl shadow-lg shadow-accent-200">
                   <Target className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3">{t('missionTitle')}</h3>
+                <div className="flex-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">{t('missionTitle')}</h3>
                   <p className="text-gray-600 leading-relaxed">{t('missionText')}</p>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Image Placeholder */}
-          <div className="relative">
-            <div className="bg-gradient-to-br from-primary-100 via-accent-50 to-primary-100 rounded-3xl h-96 flex items-center justify-center overflow-hidden shadow-2xl">
-              <div className="text-center p-8">
-                <Building2 className="w-32 h-32 text-primary-600 mx-auto mb-4 opacity-20" />
-                <p className="text-gray-400 text-lg">Building a Better Future</p>
+            {/* Quick facts */}
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="bg-primary-50 p-4 rounded-xl text-center">
+                <ShieldCheck className="w-8 h-8 text-primary-600 mx-auto mb-2" />
+                <p className="text-sm font-medium text-gray-700">{t('licensedRegulated')}</p>
+              </div>
+              <div className="bg-accent-50 p-4 rounded-xl text-center">
+                <Users className="w-8 h-8 text-accent-600 mx-auto mb-2" />
+                <p className="text-sm font-medium text-gray-700">{t('memberOwned')}</p>
               </div>
             </div>
           </div>
@@ -2103,71 +2248,128 @@ const Contact = () => {
 
 // ==================== FOOTER SECTION ====================
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, scrollToSection } = useLanguage();
+
+  const quickLinks = [
+    { key: 'navHome', section: 'home' },
+    { key: 'navAbout', section: 'about' },
+    { key: 'navServices', section: 'services' },
+    { key: 'navMembership', section: 'membership' },
+    { key: 'navCalculator', section: 'calculator' },
+    { key: 'navContact', section: 'contact' },
+  ];
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <img
-                src="/horizon_logo.png"
-                alt="Horizon SACCO Logo"
-                className="h-10 w-auto"
-              />
-              <span className="text-xl font-bold">{t('brandName')}</span>
-            </div>
-            <p className="text-gray-400">{t('footerTagline')}</p>
-          </div>
+    <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-white relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}></div>
+      </div>
 
-          {/* Contact */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">{t('footerContact')}</h4>
-            <div className="space-y-3">
-              <a href="tel:+251909800203" className="flex items-center space-x-2 text-gray-400 hover:text-white transition">
-                <Phone className="w-5 h-5" />
-                <span>+251 909 800 203</span>
-              </a>
-              <a href="mailto:saccohorizon@gmail.com" className="flex items-center space-x-2 text-gray-400 hover:text-white transition">
-                <Mail className="w-5 h-5" />
-                <span>saccohorizon@gmail.com</span>
-              </a>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Main footer content */}
+        <div className="py-12 md:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {/* Brand */}
+            <div className="sm:col-span-2 lg:col-span-1">
+              <div className="flex items-center space-x-3 mb-6">
+                <img
+                  src="/horizon_logo.png"
+                  alt="Horizon SACCO Logo"
+                  className="h-12 w-auto"
+                />
+                <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                  {t('brandName')}
+                </span>
+              </div>
+              <p className="text-gray-400 mb-6 leading-relaxed">{t('footerTagline')}</p>
+              {/* Social links placeholder */}
+              <div className="flex space-x-4">
+                <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+                  <Phone className="w-5 h-5" />
+                </a>
+                <a href="mailto:saccohorizon@gmail.com" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+                  <Mail className="w-5 h-5" />
+                </a>
+                <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+                  <MapPin className="w-5 h-5" />
+                </a>
+              </div>
             </div>
-          </div>
 
-          {/* Bank Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">{t('footerBankInfo')}</h4>
-            <div className="space-y-3 text-gray-400">
-              <p className="flex items-start space-x-2">
-                <Building2 className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span>{t('footerBankName')}</span>
-              </p>
-              <p className="text-sm">
-                <span className="block text-gray-500 mb-1">{t('footerAccountNumber')}:</span>
-                <span className="font-mono text-primary-400 font-semibold">013201695108100</span>
-              </p>
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6 text-white">{t('footerQuickLinks')}</h4>
+              <ul className="space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.section}>
+                    <button
+                      onClick={() => scrollToSection(link.section)}
+                      className="text-gray-400 hover:text-primary-400 transition-colors duration-300 flex items-center group"
+                    >
+                      <ChevronRight className="w-4 h-4 mr-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                      {t(link.key)}
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
 
-          {/* Address */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">{t('footerAddress')}</h4>
-            <div className="flex items-start space-x-2 text-gray-400">
-              <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-              <div>
-                <p>{t('footerAddressLine1')}</p>
-                <p>{t('footerAddressLine2')}</p>
-                <p>{t('footerAddressLine3')}</p>
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6 text-white">{t('footerContact')}</h4>
+              <div className="space-y-4">
+                <a href="tel:+251909800203" className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors duration-300 group">
+                  <div className="w-10 h-10 bg-gray-800 group-hover:bg-primary-600/20 rounded-lg flex items-center justify-center transition-colors duration-300">
+                    <Phone className="w-5 h-5 text-primary-400" />
+                  </div>
+                  <span>+251 909 800 203</span>
+                </a>
+                <a href="mailto:saccohorizon@gmail.com" className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors duration-300 group">
+                  <div className="w-10 h-10 bg-gray-800 group-hover:bg-primary-600/20 rounded-lg flex items-center justify-center transition-colors duration-300">
+                    <Mail className="w-5 h-5 text-primary-400" />
+                  </div>
+                  <span className="break-all">saccohorizon@gmail.com</span>
+                </a>
+                <div className="flex items-start space-x-3 text-gray-400">
+                  <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-primary-400" />
+                  </div>
+                  <div className="text-sm">
+                    <p>{t('footerAddressLine1')}</p>
+                    <p>{t('footerAddressLine2')}</p>
+                    <p>{t('footerAddressLine3')}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bank Info */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6 text-white">{t('footerBankInfo')}</h4>
+              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-5 border border-gray-700/50">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-10 h-10 bg-primary-600/20 rounded-lg flex items-center justify-center">
+                    <Building2 className="w-5 h-5 text-primary-400" />
+                  </div>
+                  <span className="font-semibold text-white">{t('footerBankName')}</span>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">{t('footerAccountNumber')}</p>
+                  <p className="font-mono text-lg text-primary-400 font-bold tracking-wider">
+                    013201695108100
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>{t('footerRights')}</p>
+        {/* Bottom bar */}
+        <div className="border-t border-gray-800 py-6">
+          <p className="text-gray-500 text-sm text-center">{t('footerRights')}</p>
         </div>
       </div>
     </footer>
