@@ -49,8 +49,8 @@ const FounderSection = ({ lang, translations }) => {
                     <span className="text-white text-xl font-bold">H</span>
                   </div>
                   <div>
-                    <div className="text-sm font-semibold text-gray-900">Since 2020</div>
-                    <div className="text-xs text-gray-500">Empowering Lives</div>
+                    <div className="text-sm font-semibold text-gray-900">{t.since}</div>
+                    <div className="text-xs text-gray-500">{t.empowering}</div>
                   </div>
                 </div>
               </div>
@@ -83,15 +83,15 @@ const FounderSection = ({ lang, translations }) => {
               <div className="grid grid-cols-3 gap-6 mt-10 pt-8 border-t border-gray-100">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-900">5+</div>
-                  <div className="text-sm text-gray-500">Years Experience</div>
+                  <div className="text-sm text-gray-500">{t.yearsExperience}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-900">10K+</div>
-                  <div className="text-sm text-gray-500">Members Served</div>
+                  <div className="text-sm text-gray-500">{t.membersServed}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-900">50M+</div>
-                  <div className="text-sm text-gray-500">Birr Managed</div>
+                  <div className="text-sm text-gray-500">{t.birrManaged}</div>
                 </div>
               </div>
             </div>

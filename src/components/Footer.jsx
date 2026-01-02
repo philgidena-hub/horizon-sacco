@@ -37,6 +37,7 @@ const LinkedinIcon = () => (
 const Footer = ({ lang, translations }) => {
   const [copied, setCopied] = useState(false);
   const t = translations[lang].nav;
+  const f = translations[lang].footer;
 
   const accountNumber = '013201695108100';
 
@@ -54,10 +55,10 @@ const Footer = ({ lang, translations }) => {
   ];
 
   const services = [
-    { label: 'Regular Savings', href: '#services' },
-    { label: "Children's Savings", href: '#services' },
-    { label: 'Housing Loans', href: '#services' },
-    { label: 'Business Loans', href: '#services' },
+    { label: f.regularSavings, href: '#services' },
+    { label: f.childrensSavings, href: '#services' },
+    { label: f.housingLoans, href: '#services' },
+    { label: f.businessLoans, href: '#services' },
   ];
 
   const socialLinks = [
@@ -85,8 +86,7 @@ const Footer = ({ lang, translations }) => {
               </span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Empowering Ethiopians with accessible savings and loan services.
-              Join us to build a secure financial future.
+              {f.tagline}
             </p>
             {/* Social Links */}
             <div className="flex space-x-3">
@@ -108,7 +108,7 @@ const Footer = ({ lang, translations }) => {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-6">{f.quickLinks}</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -126,7 +126,7 @@ const Footer = ({ lang, translations }) => {
 
           {/* Column 3: Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Our Services</h3>
+            <h3 className="text-lg font-semibold mb-6">{f.ourServices}</h3>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.label}>
@@ -144,7 +144,7 @@ const Footer = ({ lang, translations }) => {
 
           {/* Column 4: Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-6">{f.contactUs}</h3>
             <ul className="space-y-4">
               <li>
                 <a
@@ -204,7 +204,7 @@ const Footer = ({ lang, translations }) => {
               </div>
               {copied && (
                 <div className="text-xs text-green-500 mt-2 text-center">
-                  Copied to clipboard!
+                  {f.copiedToClipboard}
                 </div>
               )}
             </div>
@@ -217,26 +217,26 @@ const Footer = ({ lang, translations }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Horizon SACCO. All rights reserved.
+              © {new Date().getFullYear()} Horizon SACCO. {f.allRightsReserved}
             </div>
             <div className="flex items-center space-x-6 text-sm">
               <a
                 href="#"
                 className="text-gray-500 hover:text-green-500 transition-colors duration-200"
               >
-                Privacy Policy
+                {f.privacyPolicy}
               </a>
               <a
                 href="#"
                 className="text-gray-500 hover:text-green-500 transition-colors duration-200"
               >
-                Terms of Service
+                {f.termsOfService}
               </a>
               <a
                 href="#"
                 className="text-gray-500 hover:text-green-500 transition-colors duration-200"
               >
-                FAQ
+                {f.faq}
               </a>
             </div>
           </div>

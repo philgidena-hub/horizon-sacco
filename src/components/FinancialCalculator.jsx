@@ -48,13 +48,13 @@ const FinancialCalculator = ({ lang, translations }) => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center space-x-2 bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Calculator className="w-4 h-4" />
-            <span>Financial Tools</span>
+            <span>{t.financialTools}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             {t.title}
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Plan your finances with our easy-to-use calculators
+            {t.subtitle}
           </p>
         </div>
 
@@ -70,7 +70,7 @@ const FinancialCalculator = ({ lang, translations }) => {
               }`}
             >
               <CreditCard className="w-5 h-5" />
-              <span>Loan Eligibility</span>
+              <span>{t.loanEligibility}</span>
             </button>
             <button
               onClick={() => setMode('membership')}
@@ -81,7 +81,7 @@ const FinancialCalculator = ({ lang, translations }) => {
               }`}
             >
               <Users className="w-5 h-5" />
-              <span>Membership Cost</span>
+              <span>{t.membershipCost}</span>
             </button>
           </div>
         </div>
@@ -95,7 +95,7 @@ const FinancialCalculator = ({ lang, translations }) => {
               <div className="p-8 border-b md:border-b-0 md:border-r border-gray-700/50">
                 <h3 className="text-xl font-semibold text-white mb-6 flex items-center space-x-2">
                   <TrendingUp className="w-5 h-5 text-green-500" />
-                  <span>Calculate Your Loan Limit</span>
+                  <span>{t.calculateLoanLimit}</span>
                 </h3>
 
                 {/* Monthly Saving Input */}
@@ -157,13 +157,13 @@ const FinancialCalculator = ({ lang, translations }) => {
                   <span className="text-2xl text-gray-400 ml-2">ETB</span>
                 </div>
                 <div className="text-gray-400 text-sm max-w-xs">
-                  Based on {formatCurrency(monthlySaving)} ETB monthly savings for{' '}
-                  {months} months (3x multiplier)
+                  {t.basedOn} {formatCurrency(monthlySaving)} ETB {t.monthlyFor}{' '}
+                  {months} {t.multiplier}
                 </div>
 
                 {/* Formula Breakdown */}
                 <div className="mt-6 bg-gray-900/30 rounded-xl p-4 w-full max-w-xs">
-                  <div className="text-xs text-gray-500 mb-2">Formula</div>
+                  <div className="text-xs text-gray-500 mb-2">{t.formula}</div>
                   <div className="text-green-400 font-mono text-sm">
                     {formatCurrency(monthlySaving)} × {months} × 3 ={' '}
                     {formatCurrency(loanLimit)}
@@ -178,13 +178,13 @@ const FinancialCalculator = ({ lang, translations }) => {
               <div className="p-8 border-b md:border-b-0 md:border-r border-gray-700/50">
                 <h3 className="text-xl font-semibold text-white mb-6 flex items-center space-x-2">
                   <Coins className="w-5 h-5 text-green-500" />
-                  <span>Calculate Membership Cost</span>
+                  <span>{t.calculateMembershipCost}</span>
                 </h3>
 
                 {/* Shares Input */}
                 <div className="mb-6">
                   <label className="block text-gray-400 text-sm font-medium mb-2">
-                    {t.shares} (200 ETB each)
+                    {t.shares} ({t.sharesEach})
                   </label>
                   <input
                     type="number"
@@ -208,7 +208,7 @@ const FinancialCalculator = ({ lang, translations }) => {
                 {/* Initial Deposit Input */}
                 <div>
                   <label className="block text-gray-400 text-sm font-medium mb-2">
-                    Initial Deposit (ETB)
+                    {t.initialDeposit} (ETB)
                   </label>
                   <input
                     type="number"
@@ -247,7 +247,7 @@ const FinancialCalculator = ({ lang, translations }) => {
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2 text-gray-400">
                       <Receipt className="w-4 h-4" />
-                      <span>Share Cost ({shares} × 200)</span>
+                      <span>{t.shareCost} ({shares} × 200)</span>
                     </div>
                     <span className="text-white font-medium">
                       {formatCurrency(shareCost)} ETB
@@ -256,7 +256,7 @@ const FinancialCalculator = ({ lang, translations }) => {
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2 text-gray-400">
                       <Coins className="w-4 h-4" />
-                      <span>Initial Deposit</span>
+                      <span>{t.initialDeposit}</span>
                     </div>
                     <span className="text-white font-medium">
                       {formatCurrency(initialDeposit)} ETB
@@ -265,14 +265,14 @@ const FinancialCalculator = ({ lang, translations }) => {
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center space-x-2 text-gray-400">
                       <Users className="w-4 h-4" />
-                      <span>Registration Fee</span>
+                      <span>{t.registrationFee}</span>
                     </div>
                     <span className="text-white font-medium">
                       {formatCurrency(regFee)} ETB
                     </span>
                   </div>
                   <div className="border-t border-gray-700 pt-4 flex items-center justify-between">
-                    <span className="text-green-400 font-medium">Total</span>
+                    <span className="text-green-400 font-medium">{t.total}</span>
                     <span className="text-green-400 font-bold text-lg">
                       {formatCurrency(totalMembershipCost)} ETB
                     </span>
@@ -281,7 +281,7 @@ const FinancialCalculator = ({ lang, translations }) => {
 
                 {/* Fee Info */}
                 <div className="mt-4 text-xs text-gray-500 text-center">
-                  Registration fee: 200 (1k-5k) | 1,000 (5k-15k) | 3,500 (15k+)
+                  {t.feeInfo}
                 </div>
               </div>
             </div>
@@ -291,7 +291,7 @@ const FinancialCalculator = ({ lang, translations }) => {
         {/* Bottom Note */}
         <div className="text-center mt-8">
           <p className="text-gray-500 text-sm">
-            * Calculations are estimates. Actual values may vary based on your membership status and terms.
+            {t.disclaimer}
           </p>
         </div>
       </div>

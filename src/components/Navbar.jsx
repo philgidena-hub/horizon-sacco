@@ -14,9 +14,9 @@ const Navbar = ({ lang, setLang, translations, onJoinClick }) => {
   ];
 
   const languages = [
-    { code: 'en', label: 'English', flag: '🇬🇧' },
-    { code: 'am', label: 'አማርኛ', flag: '🇪🇹' },
-    { code: 'ti', label: 'ትግርኛ', flag: '🇪🇷' },
+    { code: 'en', label: 'English', short: 'EN' },
+    { code: 'am', label: 'አማርኛ', short: 'AM' },
+    { code: 'ti', label: 'ትግርኛ', short: 'TG' },
   ];
 
   const currentLang = languages.find((l) => l.code === lang);
@@ -60,7 +60,7 @@ const Navbar = ({ lang, setLang, translations, onJoinClick }) => {
               >
                 <Globe className="w-4 h-4 text-gray-500" />
                 <span className="text-sm font-medium text-gray-700">
-                  {currentLang?.flag} {currentLang?.label}
+                  {currentLang?.short} - {currentLang?.label}
                 </span>
                 <ChevronDown
                   className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
@@ -84,7 +84,7 @@ const Navbar = ({ lang, setLang, translations, onJoinClick }) => {
                           : 'text-gray-700'
                       }`}
                     >
-                      {language.flag} {language.label}
+                      {language.short} - {language.label}
                     </button>
                   ))}
                 </div>
@@ -142,7 +142,7 @@ const Navbar = ({ lang, setLang, translations, onJoinClick }) => {
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                     >
-                      {language.flag}
+                      {language.short}
                     </button>
                   ))}
                 </div>
