@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import {
   Globe,
   TrendingUp,
@@ -160,6 +160,33 @@ const translations = {
     contactPhone: 'Phone Number',
     contactMessage: 'Your Message',
     contactSend: 'Send Message',
+    contactSending: 'Sending...',
+    contactSuccessTitle: 'Message Sent!',
+    contactSuccessMessage: 'Thank you! We will contact you shortly.',
+    contactErrorTitle: 'Error',
+    contactErrorMessage: 'Something went wrong. Please try again.',
+    contactNote: 'We typically respond within 24 hours during business days.',
+
+    // UI Labels
+    languageLabel: 'Language',
+    menuOpen: 'Open menu',
+    menuClose: 'Close menu',
+    calculating: 'Calculating...',
+
+    // Hero Stats
+    statInterestRate: 'Interest Rate',
+    statMaxLoan: 'Max Loan',
+    statMembers: 'Members',
+
+    // Calculator Errors & Placeholders
+    shareCalcPlaceholder: 'Enter number of shares',
+    shareCalcErrorEmpty: 'Please enter number of shares',
+    shareCalcErrorMin: 'Minimum is 5 shares',
+    shareCalcErrorMax: 'Maximum is 250 shares',
+    calcMonthlySavingPlaceholder: '5000',
+    calcDurationPlaceholder: '12',
+    calcErrorSaving: 'Please enter a valid monthly saving amount',
+    calcErrorDuration: 'Please enter a valid duration in months',
 
     // Footer
     footerTagline: 'Building prosperity together',
@@ -302,6 +329,33 @@ const translations = {
     contactPhone: 'ስልክ ቁጥር',
     contactMessage: 'መልእክትዎ',
     contactSend: 'መልእክት ላክ',
+    contactSending: 'በመላክ ላይ...',
+    contactSuccessTitle: 'መልእክት ተልኳል!',
+    contactSuccessMessage: 'እናመሰግናለን! በቅርቡ እናገኝዎታለን።',
+    contactErrorTitle: 'ስህተት',
+    contactErrorMessage: 'የሆነ ስህተት ተፈጥሯል። እባክዎ እንደገና ይሞክሩ።',
+    contactNote: 'በስራ ቀናት ውስጥ በ24 ሰዓታት ውስጥ እንመልሳለን።',
+
+    // UI Labels
+    languageLabel: 'ቋንቋ',
+    menuOpen: 'ምናሌ ክፈት',
+    menuClose: 'ምናሌ ዝጋ',
+    calculating: 'በማስላት ላይ...',
+
+    // Hero Stats
+    statInterestRate: 'የወለድ መጠን',
+    statMaxLoan: 'ከፍተኛ ብድር',
+    statMembers: 'አባላት',
+
+    // Calculator Errors & Placeholders
+    shareCalcPlaceholder: 'የድርሻዎች ብዛት ያስገቡ',
+    shareCalcErrorEmpty: 'እባክዎ የድርሻዎች ብዛት ያስገቡ',
+    shareCalcErrorMin: 'ዝቅተኛ 5 ድርሻዎች ነው',
+    shareCalcErrorMax: 'ከፍተኛ 250 ድርሻዎች ነው',
+    calcMonthlySavingPlaceholder: '5000',
+    calcDurationPlaceholder: '12',
+    calcErrorSaving: 'እባክዎ ትክክለኛ ወርሃዊ ቁጠባ ያስገቡ',
+    calcErrorDuration: 'እባክዎ ትክክለኛ የወራት ብዛት ያስገቡ',
 
     // Footer
     footerTagline: 'ብልጽግናን በአንድነት እየገነቡ',
@@ -444,6 +498,33 @@ const translations = {
     contactPhone: 'ቁፅሪ ተሌፎን',
     contactMessage: 'መልእኽትኹም',
     contactSend: 'መልእኽቲ ስደዱ',
+    contactSending: 'ይለኣኽ ኣሎ...',
+    contactSuccessTitle: 'መልእኽቲ ተላኢኹ!',
+    contactSuccessMessage: 'የቐንየልና! ኣብ ቀረባ እዋን ክንረኽበኩም ኢና።',
+    contactErrorTitle: 'ጌጋ',
+    contactErrorMessage: 'ገለ ጌጋ ተፈጢሩ። በጃኹም ከም ብሓድሽ ፈትኑ።',
+    contactNote: 'ኣብ ናይ ስራሕ መዓልታት ኣብ ውሽጢ 24 ሰዓታት ንምልስ።',
+
+    // UI Labels
+    languageLabel: 'ቋንቋ',
+    menuOpen: 'ሜኑ ክፈት',
+    menuClose: 'ሜኑ ዕፀው',
+    calculating: 'ይስላሕ ኣሎ...',
+
+    // Hero Stats
+    statInterestRate: 'መጠን ወለድ',
+    statMaxLoan: 'ዝለዓለ ልቓሕ',
+    statMembers: 'ኣባላት',
+
+    // Calculator Errors & Placeholders
+    shareCalcPlaceholder: 'ቁፅሪ ድርሻታት ኣእትው',
+    shareCalcErrorEmpty: 'በጃኹም ቁፅሪ ድርሻታት ኣእትው',
+    shareCalcErrorMin: 'ዝተሓተ 5 ድርሻታት እዩ',
+    shareCalcErrorMax: 'ዝለዓለ 250 ድርሻታት እዩ',
+    calcMonthlySavingPlaceholder: '5000',
+    calcDurationPlaceholder: '12',
+    calcErrorSaving: 'በጃኹም ቅኑዕ ወርሓዊ ዕቁር ኣእትው',
+    calcErrorDuration: 'በጃኹም ቅኑዕ ቁፅሪ ኣዋርሕ ኣእትው',
 
     // Footer
     footerTagline: 'ብሓባር ራህዋ ንሃንፅ',
@@ -472,14 +553,39 @@ export const useLanguage = () => {
 };
 
 const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState(() => {
+    // Load saved language from localStorage or default to 'en'
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('horizon-language') || 'en';
+    }
+    return 'en';
+  });
+
+  // Save language to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('horizon-language', language);
+    // Update document font based on language
+    if (language === 'am' || language === 'ti') {
+      document.documentElement.classList.add('font-ethiopic');
+    } else {
+      document.documentElement.classList.remove('font-ethiopic');
+    }
+  }, [language]);
 
   const t = (key) => {
     return translations[language][key] || key;
   };
 
+  // Smooth scroll function
+  const scrollToSection = useCallback((sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []);
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, scrollToSection }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -487,9 +593,30 @@ const LanguageProvider = ({ children }) => {
 
 // ==================== NAVBAR COMPONENT ====================
 const Navbar = () => {
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage, t, scrollToSection } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Track scroll position for glassmorphism effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close language dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (isLangOpen && !e.target.closest('.lang-selector')) {
+        setIsLangOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isLangOpen]);
 
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -499,8 +626,28 @@ const Navbar = () => {
 
   const currentLang = languages.find(lang => lang.code === language);
 
+  // Handle navigation click with smooth scroll
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+    setIsMenuOpen(false); // Close mobile menu
+  };
+
+  const navLinks = [
+    { id: 'home', label: t('navHome') },
+    { id: 'about', label: t('navAbout') },
+    { id: 'services', label: t('navServices') },
+    { id: 'membership', label: t('navMembership') },
+    { id: 'rates', label: t('navRates') },
+    { id: 'contact', label: t('navContact') }
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled
+        ? 'bg-white/95 backdrop-blur-md shadow-lg'
+        : 'bg-white shadow-md'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -515,26 +662,33 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#home" className="text-gray-700 hover:text-primary-600 transition">{t('navHome')}</a>
-            <a href="#about" className="text-gray-700 hover:text-primary-600 transition">{t('navAbout')}</a>
-            <a href="#services" className="text-gray-700 hover:text-primary-600 transition">{t('navServices')}</a>
-            <a href="#membership" className="text-gray-700 hover:text-primary-600 transition">{t('navMembership')}</a>
-            <a href="#rates" className="text-gray-700 hover:text-primary-600 transition">{t('navRates')}</a>
-            <a href="#contact" className="text-gray-700 hover:text-primary-600 transition">{t('navContact')}</a>
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                onClick={(e) => handleNavClick(e, link.id)}
+                className="text-gray-700 hover:text-primary-600 transition font-medium"
+              >
+                {link.label}
+              </a>
+            ))}
 
             {/* Language Selector */}
-            <div className="relative">
+            <div className="relative lang-selector">
               <button
-                onClick={() => setIsLangOpen(!isLangOpen)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsLangOpen(!isLangOpen);
+                }}
                 className="flex items-center space-x-2 text-gray-700 hover:text-primary-600 transition"
               >
                 <Globe className="w-5 h-5" />
                 <span>{currentLang.flag}</span>
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className={`w-4 h-4 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {isLangOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg py-2 border border-gray-100">
+                <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl py-2 border border-gray-100 animate-[fadeIn_0.2s_ease-out]">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
@@ -554,7 +708,10 @@ const Navbar = () => {
               )}
             </div>
 
-            <button className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition">
+            <button
+              onClick={(e) => handleNavClick(e, 'membership')}
+              className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition transform hover:scale-105"
+            >
               {t('navJoin')}
             </button>
           </div>
@@ -563,25 +720,32 @@ const Navbar = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-gray-700 p-2"
+            aria-label={isMenuOpen ? t('menuClose') || 'Close menu' : t('menuOpen') || 'Open menu'}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
+      {/* Mobile Menu with Animation */}
+      <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+        isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+      }`}>
+        <div className="bg-white/95 backdrop-blur-md border-t border-gray-100">
           <div className="px-4 py-3 space-y-1">
-            <a href="#home" className="block text-gray-700 hover:text-primary-600 py-3">{t('navHome')}</a>
-            <a href="#about" className="block text-gray-700 hover:text-primary-600 py-3">{t('navAbout')}</a>
-            <a href="#services" className="block text-gray-700 hover:text-primary-600 py-3">{t('navServices')}</a>
-            <a href="#membership" className="block text-gray-700 hover:text-primary-600 py-3">{t('navMembership')}</a>
-            <a href="#rates" className="block text-gray-700 hover:text-primary-600 py-3">{t('navRates')}</a>
-            <a href="#contact" className="block text-gray-700 hover:text-primary-600 py-3">{t('navContact')}</a>
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                onClick={(e) => handleNavClick(e, link.id)}
+                className="block text-gray-700 hover:text-primary-600 hover:bg-primary-50 py-3 px-2 rounded-lg transition"
+              >
+                {link.label}
+              </a>
+            ))}
 
             <div className="pt-3 border-t border-gray-100">
-              <p className="text-sm text-gray-500 mb-2">Language</p>
+              <p className="text-sm text-gray-500 mb-2 px-2">{t('languageLabel') || 'Language'}</p>
               {languages.map((lang) => (
                 <button
                   key={lang.code}
@@ -589,8 +753,8 @@ const Navbar = () => {
                     setLanguage(lang.code);
                     setIsMenuOpen(false);
                   }}
-                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 ${
-                    language === lang.code ? 'bg-primary-100 text-primary-700' : 'text-gray-700'
+                  className={`w-full text-left px-3 py-2 rounded-lg mb-1 transition ${
+                    language === lang.code ? 'bg-primary-100 text-primary-700' : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >
                   <span className="mr-2">{lang.flag}</span>
@@ -599,42 +763,58 @@ const Navbar = () => {
               ))}
             </div>
 
-            <button className="w-full bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700">
+            <button
+              onClick={(e) => handleNavClick(e, 'membership')}
+              className="w-full bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition mt-2"
+            >
               {t('navJoin')}
             </button>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
 
 // ==================== HERO SECTION ====================
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, scrollToSection } = useLanguage();
 
   return (
-    <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-primary-50 via-white to-accent-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-primary-600 via-primary-500 to-accent-500 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-600/90 via-primary-500/80 to-accent-500/90"></div>
+      <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-400/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg">
               {t('heroTitle')}
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-white/90">
               {t('heroSubtitle')}
             </p>
-            <p className="text-lg text-gray-500">
+            <p className="text-lg text-white/80">
               {t('heroDescription')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="bg-primary-600 text-white px-8 py-4 rounded-lg hover:bg-primary-700 transition transform hover:scale-105 flex items-center justify-center space-x-2">
+              <button
+                onClick={() => scrollToSection('membership')}
+                className="bg-white text-primary-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition transform hover:scale-105 flex items-center justify-center space-x-2 font-semibold shadow-lg"
+              >
                 <PiggyBank className="w-5 h-5" />
                 <span>{t('heroCtaSave')}</span>
               </button>
-              <button className="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition flex items-center justify-center space-x-2">
+              <button
+                onClick={() => scrollToSection('calculator')}
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition flex items-center justify-center space-x-2 font-semibold"
+              >
                 <TrendingUp className="w-5 h-5" />
                 <span>{t('heroCtaLoan')}</span>
               </button>
@@ -642,17 +822,17 @@ const Hero = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-8">
-              <div className="text-center">
-                <p className="text-2xl sm:text-3xl font-bold text-primary-600">10%</p>
-                <p className="text-xs sm:text-sm text-gray-600">Interest Rate</p>
+              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <p className="text-2xl sm:text-3xl font-bold text-white">10%</p>
+                <p className="text-xs sm:text-sm text-white/80">{t('statInterestRate') || 'Interest Rate'}</p>
               </div>
-              <div className="text-center">
-                <p className="text-2xl sm:text-3xl font-bold text-primary-600">10M</p>
-                <p className="text-xs sm:text-sm text-gray-600">Max Loan</p>
+              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <p className="text-2xl sm:text-3xl font-bold text-white">10M</p>
+                <p className="text-xs sm:text-sm text-white/80">{t('statMaxLoan') || 'Max Loan'}</p>
               </div>
-              <div className="text-center">
-                <p className="text-2xl sm:text-3xl font-bold text-primary-600">5000+</p>
-                <p className="text-xs sm:text-sm text-gray-600">Members</p>
+              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <p className="text-2xl sm:text-3xl font-bold text-white">5000+</p>
+                <p className="text-xs sm:text-sm text-white/80">{t('statMembers') || 'Members'}</p>
               </div>
             </div>
           </div>
@@ -1021,16 +1201,45 @@ const ShareCalculator = () => {
   const { t } = useLanguage();
   const [shares, setShares] = useState('');
   const [totalCost, setTotalCost] = useState(null);
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [error, setError] = useState('');
 
-  const calculateCost = () => {
-    const numShares = parseInt(shares);
-    if (numShares >= 5 && numShares <= 250) {
-      const cost = numShares * 200;
-      setTotalCost(cost);
-    } else {
-      setTotalCost(null);
-      alert(`${t('shareCalcMin')} - ${t('shareCalcMax')}`);
+  const handleSharesChange = (e) => {
+    const value = e.target.value;
+    // Only allow positive numbers
+    if (value === '' || (parseInt(value) >= 0 && !value.includes('-'))) {
+      setShares(value);
+      setError('');
     }
+  };
+
+  const calculateCost = async () => {
+    const numShares = parseInt(shares);
+
+    if (!shares || isNaN(numShares)) {
+      setError(t('shareCalcErrorEmpty') || 'Please enter number of shares');
+      return;
+    }
+
+    if (numShares < 5) {
+      setError(t('shareCalcErrorMin') || 'Minimum is 5 shares');
+      return;
+    }
+
+    if (numShares > 250) {
+      setError(t('shareCalcErrorMax') || 'Maximum is 250 shares');
+      return;
+    }
+
+    setIsCalculating(true);
+    setError('');
+
+    // Simulate calculation delay for better UX
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    const cost = numShares * 200;
+    setTotalCost(cost);
+    setIsCalculating(false);
   };
 
   return (
@@ -1097,11 +1306,13 @@ const ShareCalculator = () => {
                   <input
                     type="number"
                     value={shares}
-                    onChange={(e) => setShares(e.target.value)}
-                    placeholder="Enter number of shares"
+                    onChange={handleSharesChange}
+                    placeholder={t('shareCalcPlaceholder') || 'Enter number of shares'}
                     min="5"
                     max="250"
-                    className="w-full px-6 py-5 text-2xl font-semibold border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none transition bg-white"
+                    className={`w-full px-6 py-5 text-2xl font-semibold border-2 rounded-xl focus:ring-2 focus:outline-none transition bg-white ${
+                      error ? 'border-red-300 focus:border-red-500 focus:ring-red-200' : 'border-gray-200 focus:border-primary-500 focus:ring-primary-200'
+                    }`}
                   />
                   <div className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400">
                     <Users className="w-6 h-6" />
@@ -1111,14 +1322,34 @@ const ShareCalculator = () => {
                   <span>{t('shareCalcMin')}</span>
                   <span>{t('shareCalcMax')}</span>
                 </div>
+                {error && (
+                  <p className="mt-2 text-sm text-red-600 animate-[fadeIn_0.2s_ease-out]">{error}</p>
+                )}
               </div>
 
               <button
                 onClick={calculateCost}
-                className="w-full bg-primary-600 text-white py-5 rounded-xl hover:bg-primary-700 transition transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center space-x-3 text-lg font-bold shadow-xl shadow-primary-500/30"
+                disabled={isCalculating}
+                className={`w-full py-5 rounded-xl transition transform flex items-center justify-center space-x-3 text-lg font-bold shadow-xl ${
+                  isCalculating
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : 'bg-primary-600 hover:bg-primary-700 hover:scale-[1.02] active:scale-[0.98] shadow-primary-500/30'
+                } text-white`}
               >
-                <Calculator className="w-6 h-6" />
-                <span>{t('shareCalcButton')}</span>
+                {isCalculating ? (
+                  <>
+                    <svg className="animate-spin w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>{t('calculating') || 'Calculating...'}</span>
+                  </>
+                ) : (
+                  <>
+                    <Calculator className="w-6 h-6" />
+                    <span>{t('shareCalcButton')}</span>
+                  </>
+                )}
               </button>
 
               {totalCost !== null && (
@@ -1321,17 +1552,41 @@ const LoanCalculator = () => {
   const [monthlySaving, setMonthlySaving] = useState('');
   const [duration, setDuration] = useState('');
   const [estimatedLoan, setEstimatedLoan] = useState(null);
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [error, setError] = useState('');
 
-  const calculateLoan = () => {
+  const handleInputChange = (setter) => (e) => {
+    const value = e.target.value;
+    // Only allow positive numbers
+    if (value === '' || (parseFloat(value) >= 0 && !value.includes('-'))) {
+      setter(value);
+      setError('');
+    }
+  };
+
+  const calculateLoan = async () => {
     const saving = parseFloat(monthlySaving);
     const months = parseFloat(duration);
 
-    if (saving > 0 && months > 0) {
-      const loan = saving * months * 3;
-      setEstimatedLoan(loan);
-    } else {
-      setEstimatedLoan(null);
+    if (!monthlySaving || isNaN(saving) || saving <= 0) {
+      setError(t('calcErrorSaving') || 'Please enter a valid monthly saving amount');
+      return;
     }
+
+    if (!duration || isNaN(months) || months <= 0) {
+      setError(t('calcErrorDuration') || 'Please enter a valid duration in months');
+      return;
+    }
+
+    setIsCalculating(true);
+    setError('');
+
+    // Simulate calculation delay for better UX
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    const loan = Math.min(saving * months * 3, 10000000); // Cap at 10M
+    setEstimatedLoan(loan);
+    setIsCalculating(false);
   };
 
   return (
@@ -1404,6 +1659,13 @@ const LoanCalculator = () => {
             {/* Right Side - Calculator Interface */}
             <div className="p-8 md:p-12 bg-gray-50">
               <div className="space-y-6">
+                {/* Error Message */}
+                {error && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-xl animate-[fadeIn_0.2s_ease-out]">
+                    <p className="text-sm text-red-600">{error}</p>
+                  </div>
+                )}
+
                 {/* Monthly Saving Input */}
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">
@@ -1413,9 +1675,11 @@ const LoanCalculator = () => {
                     <input
                       type="number"
                       value={monthlySaving}
-                      onChange={(e) => setMonthlySaving(e.target.value)}
-                      placeholder="5000"
-                      className="w-full px-6 py-5 text-2xl font-semibold border-2 border-gray-200 rounded-xl focus:border-accent-500 focus:ring-2 focus:ring-accent-200 focus:outline-none transition bg-white"
+                      onChange={handleInputChange(setMonthlySaving)}
+                      placeholder={t('calcMonthlySavingPlaceholder') || '5000'}
+                      className={`w-full px-6 py-5 text-2xl font-semibold border-2 rounded-xl focus:ring-2 focus:outline-none transition bg-white ${
+                        error && !monthlySaving ? 'border-red-300 focus:border-red-500 focus:ring-red-200' : 'border-gray-200 focus:border-accent-500 focus:ring-accent-200'
+                      }`}
                     />
                     <div className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400">
                       <PiggyBank className="w-6 h-6" />
@@ -1433,9 +1697,11 @@ const LoanCalculator = () => {
                     <input
                       type="number"
                       value={duration}
-                      onChange={(e) => setDuration(e.target.value)}
-                      placeholder="12"
-                      className="w-full px-6 py-5 text-2xl font-semibold border-2 border-gray-200 rounded-xl focus:border-accent-500 focus:ring-2 focus:ring-accent-200 focus:outline-none transition bg-white"
+                      onChange={handleInputChange(setDuration)}
+                      placeholder={t('calcDurationPlaceholder') || '12'}
+                      className={`w-full px-6 py-5 text-2xl font-semibold border-2 rounded-xl focus:ring-2 focus:outline-none transition bg-white ${
+                        error && !duration ? 'border-red-300 focus:border-red-500 focus:ring-red-200' : 'border-gray-200 focus:border-accent-500 focus:ring-accent-200'
+                      }`}
                     />
                     <div className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400">
                       <TrendingUp className="w-6 h-6" />
@@ -1447,10 +1713,27 @@ const LoanCalculator = () => {
                 {/* Calculate Button */}
                 <button
                   onClick={calculateLoan}
-                  className="w-full bg-accent-600 text-white py-5 rounded-xl hover:bg-accent-700 transition transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center space-x-3 text-lg font-bold shadow-xl shadow-accent-500/30"
+                  disabled={isCalculating}
+                  className={`w-full py-5 rounded-xl transition transform flex items-center justify-center space-x-3 text-lg font-bold shadow-xl ${
+                    isCalculating
+                      ? 'bg-gray-400 cursor-not-allowed'
+                      : 'bg-accent-600 hover:bg-accent-700 hover:scale-[1.02] active:scale-[0.98] shadow-accent-500/30'
+                  } text-white`}
                 >
-                  <Calculator className="w-6 h-6" />
-                  <span>{t('calcButton')}</span>
+                  {isCalculating ? (
+                    <>
+                      <svg className="animate-spin w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <span>{t('calculating') || 'Calculating...'}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Calculator className="w-6 h-6" />
+                      <span>{t('calcButton')}</span>
+                    </>
+                  )}
                 </button>
 
                 {/* Result Display */}
@@ -1591,12 +1874,26 @@ const Contact = () => {
     phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    alert(`Message from ${formData.name}: ${formData.message}`);
-    setFormData({ name: '', phone: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Simulate API call
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      setSubmitStatus('success');
+      setFormData({ name: '', phone: '', message: '' });
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -1730,13 +2027,60 @@ const Contact = () => {
                   />
                 </div>
 
+                {/* Success Message */}
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-xl animate-[fadeIn_0.3s_ease-out]">
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-green-100 p-2 rounded-full">
+                        <ShieldCheck className="w-5 h-5 text-green-600" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-green-800">{t('contactSuccessTitle') || 'Message Sent!'}</p>
+                        <p className="text-sm text-green-600">{t('contactSuccessMessage') || 'Thank you! We will contact you shortly.'}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Error Message */}
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-xl animate-[fadeIn_0.3s_ease-out]">
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-red-100 p-2 rounded-full">
+                        <X className="w-5 h-5 text-red-600" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-red-800">{t('contactErrorTitle') || 'Error'}</p>
+                        <p className="text-sm text-red-600">{t('contactErrorMessage') || 'Something went wrong. Please try again.'}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-primary-600 text-white py-5 rounded-xl hover:bg-primary-700 transition transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center space-x-3 text-lg font-bold shadow-xl shadow-primary-500/30"
+                  disabled={isSubmitting}
+                  className={`w-full py-5 rounded-xl transition transform flex items-center justify-center space-x-3 text-lg font-bold shadow-xl ${
+                    isSubmitting
+                      ? 'bg-gray-400 cursor-not-allowed'
+                      : 'bg-primary-600 hover:bg-primary-700 hover:scale-[1.02] active:scale-[0.98] shadow-primary-500/30'
+                  } text-white`}
                 >
-                  <Send className="w-6 h-6" />
-                  <span>{t('contactSend')}</span>
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <span>{t('contactSending') || 'Sending...'}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-6 h-6" />
+                      <span>{t('contactSend')}</span>
+                    </>
+                  )}
                 </button>
 
                 {/* Info Note */}
