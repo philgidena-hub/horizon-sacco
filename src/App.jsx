@@ -987,28 +987,13 @@ const About = () => {
           {/* Left - Image Card */}
           <div className="relative order-2 lg:order-1">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
-              {/* Image placeholder - replace src with your generated image */}
+              {/* Horizon image */}
               <div className="aspect-[4/3] bg-gradient-to-br from-primary-600 via-primary-500 to-accent-500 relative">
-                {/* Placeholder content - will be replaced by actual image */}
                 <img
-                  src="/about-image.jpg"
-                  alt="Horizon SACCO Office"
+                  src="/horizon-image.png"
+                  alt="Horizon SACCO"
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
                 />
-                {/* Fallback placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center" style={{ display: 'none' }}>
-                  <div className="text-center text-white p-8">
-                    <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <Building2 className="w-12 h-12 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2">Horizon SACCO</h3>
-                    <p className="text-white/80">Your trusted financial partner</p>
-                  </div>
-                </div>
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
