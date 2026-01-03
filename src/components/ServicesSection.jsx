@@ -138,12 +138,6 @@ const ServicesSection = ({ lang, translations }) => {
                     <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-8 h-8 text-white" />
                     </div>
-                    <div className="text-right">
-                      <div className="text-white/80 text-sm">{t.rate}</div>
-                      <div className="text-white text-2xl font-bold group-hover:scale-110 transition-transform duration-300 origin-right">
-                        {service.rate}
-                      </div>
-                    </div>
                   </div>
                 </div>
 
