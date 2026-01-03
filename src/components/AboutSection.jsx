@@ -70,11 +70,17 @@ const AboutSection = ({ lang, translations }) => {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Team collaboration"
+                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Ethiopian community financial empowerment"
                 className="w-full h-[450px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent" />
+              {/* Ethiopian Flag Colors Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-2 flex">
+                <div className="flex-1 bg-green-500/80" />
+                <div className="flex-1 bg-yellow-400/80" />
+                <div className="flex-1 bg-red-500/80" />
+              </div>
             </div>
 
             {/* Floating Badge */}
@@ -146,14 +152,20 @@ const AboutSection = ({ lang, translations }) => {
             </div>
 
             {/* Values Header Card */}
-            <div className="group relative bg-gray-900 rounded-3xl p-6 shadow-xl overflow-hidden hover:scale-[1.02] transition-all duration-300">
+            <div className="group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-6 shadow-xl overflow-hidden hover:scale-[1.02] transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative h-full flex flex-col justify-between">
+              {/* Ethiopian Pattern Decoration */}
+              <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
+                <div className="w-full h-full bg-[radial-gradient(circle,_white_1px,_transparent_1px)] bg-[length:8px_8px]" />
+              </div>
+              <div className="relative h-full flex flex-col justify-between min-h-[140px]">
                 <div>
-                  <span className="text-green-400 text-sm font-semibold uppercase tracking-wider">Values</span>
-                  <h3 className="text-2xl font-bold text-white mt-2">{t.valuesTitle}</h3>
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span className="w-8 h-1 bg-gradient-to-r from-green-500 via-yellow-400 to-red-500 rounded-full" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">{t.valuesTitle}</h3>
                 </div>
-                <div className="mt-4 flex items-center text-green-400 group-hover:translate-x-2 transition-transform duration-300">
+                <div className="flex items-center text-green-400 group-hover:translate-x-2 transition-transform duration-300">
                   <span className="text-sm font-medium">What drives us</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </div>
