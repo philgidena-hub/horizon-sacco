@@ -70,8 +70,8 @@ const AboutSection = ({ lang, translations }) => {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Ethiopian community members collaborating"
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Modern fintech and digital banking"
                 className="w-full h-[450px] object-cover"
               />
               {/* Ethiopian Flag Colors Overlay */}
@@ -91,7 +91,7 @@ const AboutSection = ({ lang, translations }) => {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-gray-900">{t.badge}</p>
-                  <p className="text-sm text-gray-500">Vision 2025</p>
+                  <p className="text-sm text-gray-500">Vision 2031</p>
                 </div>
               </div>
             </div>

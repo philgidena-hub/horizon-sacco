@@ -7,29 +7,59 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Horizon SACCO Brand Colors (from logo)
+        brand: {
+          // Dark Forest Green (main logo text)
+          green: {
+            50: '#e8f5ed',
+            100: '#c5e6d1',
+            200: '#9ed6b3',
+            300: '#77c695',
+            400: '#5ab97d',
+            500: '#1B7340', // Primary brand green
+            600: '#186639',
+            700: '#145831',
+            800: '#104a29',
+            900: '#0c3c21',
+          },
+          // Golden Yellow (sun/person in logo)
+          gold: {
+            50: '#fef9e7',
+            100: '#fdefc3',
+            200: '#fce49b',
+            300: '#fbd873',
+            400: '#f9c84b',
+            500: '#F7A824', // Primary brand gold
+            600: '#de9620',
+            700: '#c4841c',
+            800: '#ab7318',
+            900: '#916114',
+          },
+        },
+        // Keep for backward compatibility
         primary: {
-          50: '#f0fdf4',
-          100: '#dcfce7',
-          200: '#bbf7d0',
-          300: '#86efac',
-          400: '#4ade80',
-          500: '#22c55e',
-          600: '#16a34a',
-          700: '#15803d',
-          800: '#166534',
-          900: '#14532d',
+          50: '#e8f5ed',
+          100: '#c5e6d1',
+          200: '#9ed6b3',
+          300: '#77c695',
+          400: '#5ab97d',
+          500: '#1B7340',
+          600: '#186639',
+          700: '#145831',
+          800: '#104a29',
+          900: '#0c3c21',
         },
         accent: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
+          50: '#fef9e7',
+          100: '#fdefc3',
+          200: '#fce49b',
+          300: '#fbd873',
+          400: '#f9c84b',
+          500: '#F7A824',
+          600: '#de9620',
+          700: '#c4841c',
+          800: '#ab7318',
+          900: '#916114',
         },
       },
       fontFamily: {
