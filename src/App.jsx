@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { translations } from './data';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import FinancialCalculator from './components/FinancialCalculator';
 import FounderSection from './components/FounderSection';
@@ -51,6 +52,7 @@ function App() {
       />
       <main>
         <Hero lang={lang} translations={translations} />
+        <AboutSection lang={lang} translations={translations} />
         <ServicesSection lang={lang} translations={translations} />
         <FinancialCalculator lang={lang} translations={translations} />
         <FounderSection lang={lang} translations={translations} />

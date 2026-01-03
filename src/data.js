@@ -127,6 +127,17 @@ export const translations = {
       termsOfService: 'Terms of Service',
       faq: 'FAQ',
     },
+    // About Section
+    about: {
+      title: 'About Us',
+      subtitle: 'Building a stronger financial future for our community',
+      visionTitle: 'Our Vision',
+      vision: 'To become a modern, sustainable, and competitive saving & credit cooperative in Ethiopia by 2025.',
+      missionTitle: 'Our Mission',
+      mission: 'Fulfilling members\' aspirations by providing affordable credit for housing, transport, and health, backed by loan life insurance and technology.',
+      valuesTitle: 'Our Values',
+      values: ['Integrity', 'Community', 'Growth'],
+    },
   },
   am: {
     // Navigation
@@ -255,6 +266,17 @@ export const translations = {
       termsOfService: 'የአገልግሎት ውሎች',
       faq: 'ተደጋጋሚ ጥያቄዎች',
     },
+    // About Section
+    about: {
+      title: 'ስለ እኛ',
+      subtitle: 'ለማህበረሰባችን ጠንካራ የፋይናንስ ወደፊት እንገነባለን',
+      visionTitle: 'ራዕያችን',
+      vision: 'በ2025 በኢትዮጵያ ዘመናዊ እና ተወዳዳሪ የቁጠባ እና ብድር ህብረት ስራ ማህበር መሆን።',
+      missionTitle: 'ተልዕኳችን',
+      mission: 'ለአባላት ቤት፣ ትራንስፖርት እና ህክምና የሚሆን ተመጣጣኝ ብድር በማቅረብ ህይወታቸውን ማሻሻል።',
+      valuesTitle: 'እሴቶቻችን',
+      values: ['ታማኝነት', 'ማህበረሰብ', 'እድገት'],
+    },
   },
   ti: {
     // Navigation
@@ -382,6 +404,17 @@ export const translations = {
       privacyPolicy: 'ናይ ብሕትውና ፖሊሲ',
       termsOfService: 'ናይ ኣገልግሎት ውዕላት',
       faq: 'ተደጋጋሚ ሕቶታት',
+    },
+    // About Section
+    about: {
+      title: 'ብዛዕባና',
+      subtitle: 'ንማሕበረሰብና ጠንካራ ናይ ፋይናንስ መጻኢ ንሃንጽ',
+      visionTitle: 'ራእይና',
+      vision: 'ባህሊ ዕቁር ብምዕባይ ኣብ 2025 ዓ/ም ኣብ ኢትዮጵያ ዘመናዊን ተወዳዳርን ማሕበር ምዃን።',
+      missionTitle: 'ተልእኾና',
+      mission: 'ባህጊ ኣባላት ንምምላእ ንኣባይቲ፣ መጓዓዚያን ሕክምናን ዝኸውን ብተመጣጣኒ ዋጋ ልቓሕ ምቕራብ።',
+      valuesTitle: 'እሴታትና',
+      values: ['ቅንዕና', 'ማሕበረሰብ', 'ዕብየት'],
     },
   },
 };
