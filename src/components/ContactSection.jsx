@@ -27,7 +27,7 @@ const ContactSection = ({ lang, translations }) => {
       successDesc: 'We\'ll get back to you within 24 hours.',
       contactInfo: 'Contact Information',
       address: 'Mekelle, Tigray Region, Ethiopia',
-      hours: 'Mon - Fri: 8:00 AM - 5:00 PM',
+      hours: 'Mon - Sat: 8:00 AM - 5:00 PM',
       subjects: ['General Inquiry', 'Membership', 'Loans', 'Savings', 'Other'],
     },
     am: {
@@ -44,7 +44,7 @@ const ContactSection = ({ lang, translations }) => {
       successDesc: 'በ24 ሰዓታት ውስጥ እንመልስልዎታለን።',
       contactInfo: 'የእውቂያ መረጃ',
       address: 'መቀሌ፣ ትግራይ ክልል፣ ኢትዮጵያ',
-      hours: 'ሰኞ - አርብ: 8:00 AM - 5:00 PM',
+      hours: 'ሰኞ - ቅዳሜ: 8:00 AM - 5:00 PM',
       subjects: ['አጠቃላይ ጥያቄ', 'አባልነት', 'ብድር', 'ቁጠባ', 'ሌላ'],
     },
     ti: {
@@ -61,7 +61,7 @@ const ContactSection = ({ lang, translations }) => {
       successDesc: 'ኣብ ውሽጢ 24 ሰዓታት ክንምልሰልኩም ኢና።',
       contactInfo: 'ናይ ርክብ ሓበሬታ',
       address: 'መቐለ፣ ክልል ትግራይ፣ ኢትዮጵያ',
-      hours: 'ሰኑይ - ዓርቢ: 8:00 AM - 5:00 PM',
+      hours: 'ሰኑይ - ቀዳም: 8:00 AM - 5:00 PM',
       subjects: ['ሓፈሻዊ ሕቶ', 'ኣባልነት', 'ልቓሕ', 'ቁጠባ', 'ካልእ'],
     },
   };
